@@ -1,0 +1,50 @@
+https://www.robotarium.gatech.edu/faq
+
+https://selfdrivingcars.mit.edu/deeptraffic/
+
+https://junyanz.github.io/CycleGAN/
+
+Olhei problemas de MRS estudados
+Problemas de MRS
+	Modelos de cooperação:
+		Problemas de MAS aplicados a MRS
+		Não necessariamente são problemas gerados da robótica
+		São geralmente pesquisados approachs diferentes (E.G. Market-Based Multirobot Coordination: A Survey and Analysis)
+
+		Highlights: 
+			Building Multirobot Coalitions Through Automated Task Solutions Synthesis
+				Técnica para sintetizar automaticamente soluções de tarefas para times de robôs heterogêneos
+			Decentralized Cooperative Aerial Surveillance Using Fixed-Wing Miniature UAVs
+				Cooperação de MRS para vigilância áerea -> explora solução centralizada e descentralizada
+	Sensoriamento cooperativo, localização e exploração
+		Robos tem o problema de mapear e determinar sua posição em um ambiente
+		MRS podem ter acesso a várias informações de vários robos
+			Podemos paralelizar a tarefa também, com ganho de eficiência e robustez
+		add stuff
+
+		Highlights:
+			Distributed Multi- robot Exploration and Mapping
+				Mostra tecnicas para exploração e monitoramento
+				Parte de um projeto que tem como objetivo colocar 100 robos para exploração e monitoramento (CentiBot)
+			Cooperation Issues and Distributed Sensing for Multirobot System
+				MRS que consegue mudar o papel dos robôs dinamicamente, além de um sistema de sensores distribuidos.
+				Desenvolvido dentro do escopo de competições de futebol de robô
+
+
+
+
+
+
+
+
+
+Problemas de tráfego
+	Autonomous Driving
+		Maioria dos problemas atualmente focam em otimizar isso (em relação a ML)
+		Não tão desenvolvido no brasil -> oportunidade
+		Problemas vão desde algoritmos lógicos de ultrapassagem (Link do selfdrivingcars do MIT acima)
+		Problemas de robustez (Visão, sensoriamento, controle, etc)
+	Controle de trafégo
+		Legal, meio fora do contexto de robótica, mas ainda uma área interessante
+
+

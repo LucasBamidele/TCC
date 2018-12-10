@@ -1,0 +1,39 @@
+Reunião com o Romariz:
+Muitos simuladores de transito:
+	Desde mais simples (link da parada web)
+	https://www.hacklab.com.br/simulador-de-transito/
+	Mais complexos
+	https://www.youtube.com/watch?v=j4S1rZVG1u0
+	Tem até um estudo comparativo entre os simuladores, da UFRS
+		Descreve a ideia básica, etapas que simuladores desse tipo executam
+		Vários passos pra descrição acurada de um modelo real
+		Porém, eles usam modelos pré criados de movimentação 'car following'(não vi se algum deles tem como mudar esses modelos?)
+	Tem um paper de um pessoal chinês que usou o NETLOGO (software de programação de modelagem de coisas multiagentes)
+		Esse software já tem uma gridlock que permite simulações de cidades
+
+Procurando mais sobre o NETLOGO, ele é bem interessante pra várias aplicações de sistemas multiagentes
+
+Magnus Egerstedt (Georgia Tech)
+	Tem uns projetos legais na área
+		Mixed Autonomous and Non-Autonomous Vehicles in High-Complexity Traffic
+		Sponsor: Ford Motor Company
+		Duration: Jan. 2018 - Dec. 2019
+
+		Project description: This project aims at understanding mixed groups of autonomous and non-autonomous vehicles in complex and unstructured traffic scenarios where the standard traffic rules are somewhat ambiguous and/or suspended, examples including parking lots, unregulated intersections, merging lanes, large traffic circles, etc. What this entails is the development of new autonomous driving behaviors that can predict and even mitigate human intentions based on a combination of distributed control, trust models, and machine learning. The expected outcomes are algorithms for autonomous driving that makes driving in high-complexity/low-structure environments more effective and safe. 
+	Mais em:
+	https://magnus.ece.gatech.edu/projects.html#DCIST
+
+	https://magnus.ece.gatech.edu/index_projects.html
+
+	Vários projetos com no âmbito de formação
+Competições
+Logistics (organização de peças, multiagentes etc) https://www.youtube.com/watch?time_continue=52&v=2glXlU5rzo4
+	já existe uma plataforma para sua simulação no VREP
+	Acho interessante
+		Automação de portos, carregamentos de cargas etc.
+		>>> Como simular?
+
+ARPA UGV demo (acredito que não exista mais, paper era bem antigo, paper Ronald Arkin)
+	Dava uma boa introduzida nos conceitos de robótica multiagente
+	Sistema para coodenação de times de veículos autonomos tipo jipe, em ambientes dinâmicos, não estruturados e perigosos
+		Não acho um caminho muito bom a seguir, mas ele dá boas bases para implementação de algumas funções 

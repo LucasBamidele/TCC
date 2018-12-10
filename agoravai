@@ -1,0 +1,20 @@
+futebol de robos
+	UnBall gostaria de desenvolver um projeto assim
+	Situação atual da UnBall: estão se redesenvolvendo
+		Infraestrutura do código
+		Controle
+		Estratégia
+		Simulador => tem um antigo (funcional), mas estão terminando de desenvolver um novo em python
+	Já estavam com propostas pra começar a usar lógica Fuzzy para estratégia, mas estão ainda no processo inicial de implementação
+	Cai um pouco no problema de avaliação: como avaliar o projeto?
+		Competição? estão confirmadas em 2 (março e outubro de 2019), e talvez uma em julho.
+	Já vi uma pessoa que trabalharam com ML com a UnBall:
+		Matheus Portela fez o TCC dele e 2 artigos nisso.
+			"SELEÇÃO DE COMPORTAMENTOS EM MÚLTIPLOS AGENTES AUTÔNOMOS COM APRENDIZAGEM POR REFORÇO EM AMBIENTES ESTOCÁSTICOS"
+
+
+Redes GAN para geração de imagens
+	Pesquisei sobre qualificação de imagens, e os métodos hoje ainda são, em sua maioria, dependentes de um avaliador humano (objetivamente e subjetivamente)
+	Tem algumas pessoas que trabalham com isso na UnB (Mylene, mas ela está fora do Brasil atualmente).
+
+
