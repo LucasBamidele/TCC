@@ -6,7 +6,9 @@ import arcade
 import random
 import time
 import Adapter
+import Robot
 #Constants
+dt = 1/60
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 SCALE = 3
@@ -22,33 +24,38 @@ SPRITE_SCALE_BALL = 0.2*SCALE
 class MySimulation(arcade.Window):
 	def __init__(self, width, height, adapter):
 		super().__init__(width, height)
+		self.elapsed=  0
 		self.sentido = 1
 		self.bola = None
-		self.robot1 = None
-		self.robot2 = None
-		self.robot3 = None
 		self.adapter = adapter
+		self.robot1 = adapter.strat1.robot1
+		self.robot2 = adapter.strat1.robot2
+		self.robot3 = adapter.strat1.robot3
+		
 	def setup(self):
 
 		self.robot_list = arcade.SpriteList()
-		self.robot1 = arcade.Sprite("imgs/robo1.png", SPRITE_SCALE_ROBOT)
-		self.robot2 = arcade.Sprite("imgs/robo2.png", SPRITE_SCALE_ROBOT)
-		self.robot3 = arcade.Sprite("imgs/robo3.png", SPRITE_SCALE_ROBOT)
+		#self.robot1 = arcade.Sprite("imgs/robo1.png", SPRITE_SCALE_ROBOT)
+		#self.robot1 = Robot.RobotPlayer("imgs/robo1.png", SPRITE_SCALE_ROBOT, SCREEN_WIDTH/2 - 80, SCREEN_WIDTH/2 + 100,
+		#	10, 10, 0)
+		#self.robot2 = arcade.Sprite("imgs/robo2.png", SPRITE_SCALE_ROBOT)
+		#self.robot3 = arcade.Sprite("imgs/robo3.png", SPRITE_SCALE_ROBOT)
+
 
 		self.bola = arcade.Sprite("imgs/bola.png", SPRITE_SCALE_BALL)
 		self.bola.alpha = 255
-		self.bola.center_x = SCREEN_WIDTH/2
-		self.bola.center_y = SCREEN_HEIGHT/2
+		#self.bola.center_x = SCREEN_WIDTH/2
+		#self.bola.center_y = SCREEN_HEIGHT/2
 
 
-		self.robot1.center_x = SCREEN_WIDTH/2 - 80
-		self.robot1.center_y = SCREEN_WIDTH/2 + 100
+		#self.robot1.center_x = SCREEN_WIDTH/2 - 80
+		#self.robot1.center_y = SCREEN_WIDTH/2 + 100
 
-		self.robot2.center_x = SCREEN_WIDTH/2 - 80
-		self.robot2.center_y = SCREEN_WIDTH/2
+		#self.robot2.center_x = SCREEN_WIDTH/2 - 80
+		#self.robot2.center_y = SCREEN_WIDTH/2
 
-		self.robot3.center_x = SCREEN_WIDTH/2 - 80
-		self.robot3.center_y = SCREEN_WIDTH/2 - 100
+		#self.robot3.center_x = SCREEN_WIDTH/2 - 80
+		#self.robot3.center_y = SCREEN_WIDTH/2 - 100
 
 		self.robot_list.append(self.robot1)
 		self.robot_list.append(self.robot2)
@@ -113,17 +120,7 @@ class MySimulation(arcade.Window):
 		self.bola.draw()
 
 	def on_update(self, delta_time):
-		curr_x = (self.robot2.get_points()[0][0] + self.robot2.get_points()[1][0])/2
-		curr_y = (self.robot2.get_points()[0][1] + self.robot2.get_points()[2][1])/2
-		self.adapter.update(delta_time, curr_x, curr_y, self.robot1.angle)
-		self.robot2.angle = self.adapter.ang
-
-		#self.robot1.angle += 45
-		#exit()
-		#hit = arcade.check_for_collision(self.robot2, self.bola)
-
-		self.robot2.set_position(self.adapter.X, self.adapter.Y)
-		#self.robot1.set_position(self.robot1.get_)
+		self.adapter.update(dt)
 		
 def main():
 
