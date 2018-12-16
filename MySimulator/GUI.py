@@ -27,10 +27,12 @@ class MySimulation(arcade.Window):
 		self.elapsed=  0
 		self.sentido = 1
 		self.bola = None
+		self.bolamass = 3
 		self.adapter = adapter
 		self.robot1 = adapter.strat1.robot1
 		self.robot2 = adapter.strat1.robot2
 		self.robot3 = adapter.strat1.robot3
+
 		
 	def setup(self):
 
@@ -41,11 +43,10 @@ class MySimulation(arcade.Window):
 		#self.robot2 = arcade.Sprite("imgs/robo2.png", SPRITE_SCALE_ROBOT)
 		#self.robot3 = arcade.Sprite("imgs/robo3.png", SPRITE_SCALE_ROBOT)
 
-
 		self.bola = arcade.Sprite("imgs/bola.png", SPRITE_SCALE_BALL)
 		self.bola.alpha = 255
-		#self.bola.center_x = SCREEN_WIDTH/2
-		#self.bola.center_y = SCREEN_HEIGHT/2
+		self.bola.center_x = SCREEN_WIDTH/2
+		self.bola.center_y = SCREEN_HEIGHT/2
 
 
 		#self.robot1.center_x = SCREEN_WIDTH/2 - 80
@@ -118,13 +119,17 @@ class MySimulation(arcade.Window):
 		self.drawField()
 		self.robot_list.draw()
 		self.bola.draw()
-
+	def checkCollisions(self):
+		hit = arcade.check_for_collision(self.robot2, self.bola)
+		if(hit):
+			self.robot2.setFree(False)
+			print('hitou!')
 	def on_update(self, delta_time):
 		self.adapter.update(dt)
+		self.checkCollisions()
+
 		
 def main():
-
-
 
 	simulation = MySimulation(SCREEN_WIDTH, SCREEN_HEIGHT)
 	simulation.setup()

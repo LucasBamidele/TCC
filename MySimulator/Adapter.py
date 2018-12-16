@@ -7,7 +7,6 @@ import strat
 #Takes the current position/vel/linvel and translates to the planner
 
 
-#DAR UPDATE EM VX para controlar velocidade linear
 def deg2rad(deg):
 	return deg*pi/180.
 def rad2deg(rad):
