@@ -7,6 +7,7 @@ import random
 import time
 import Adapter
 import Robot
+import Ball
 #Constants
 dt = 1/60
 SCREEN_WIDTH = 600
@@ -43,10 +44,9 @@ class MySimulation(arcade.Window):
 		#self.robot2 = arcade.Sprite("imgs/robo2.png", SPRITE_SCALE_ROBOT)
 		#self.robot3 = arcade.Sprite("imgs/robo3.png", SPRITE_SCALE_ROBOT)
 
-		self.bola = arcade.Sprite("imgs/bola.png", SPRITE_SCALE_BALL)
+		#self.bola = arcade.Sprite("imgs/bola.png", SPRITE_SCALE_BALL)
+		self.bola = Ball.GameBall("imgs/bola.png", SPRITE_SCALE_BALL, SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
 		self.bola.alpha = 255
-		self.bola.center_x = SCREEN_WIDTH/2
-		self.bola.center_y = SCREEN_HEIGHT/2
 
 
 		#self.robot1.center_x = SCREEN_WIDTH/2 - 80
@@ -122,9 +122,12 @@ class MySimulation(arcade.Window):
 	def checkCollisions(self):
 		hit = arcade.check_for_collision(self.robot2, self.bola)
 		if(hit):
+			self.bola.collide(self.robot2.angle, self.robot2.linV, self.robot2.mass)
 			self.robot2.setFree(False)
-			print('hitou!')
+			self.robot2.updateVelocities(0,0)
+			print('hit!')
 	def on_update(self, delta_time):
+		self.bola.update(dt)
 		self.adapter.update(dt)
 		self.checkCollisions()
 

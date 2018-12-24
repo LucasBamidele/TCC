@@ -2,7 +2,7 @@ import arcade.sprite
 import Adapter
 class RobotPlayer(arcade.sprite.Sprite):
 	"""docstring for RobotPlayer"""
-	def __init__(self, imgfile, scale, xi, yi, linV, angV, anglei,mass = 3):
+	def __init__(self, imgfile, scale, xi, yi, linV, angV, anglei,mass = 300):
 		super().__init__(imgfile, scale)
 		self.mass = mass
 		self.center_x = xi
